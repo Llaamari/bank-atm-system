@@ -52,7 +52,7 @@ void logs::updateModel()
 
     for (int i = start; i < end; i++) {
         const logevents &event = loglist[i];
-        QStandardItem *idlog = new QStandardItem(QString::number(event.idLog));
+        QStandardItem *idlog = new QStandardItem(QString::number(loglist.size() - i));
         idlog->setTextAlignment(Qt::AlignCenter | Qt::AlignVCenter);
         QStandardItem *aika = new QStandardItem(event.time);
         aika->setTextAlignment(Qt::AlignCenter | Qt::AlignVCenter);
@@ -79,7 +79,7 @@ void logs::updateModelAdmin()
 
     for (int row = 0; row < loglist.size(); row++) {
         const logevents &event = loglist[row];
-        QStandardItem *idlog = new QStandardItem(QString::number(event.idLog));
+        QStandardItem *idlog = new QStandardItem(QString::number(loglist.size() - row));
         idlog->setTextAlignment(Qt::AlignCenter | Qt::AlignVCenter);
         QStandardItem *aika = new QStandardItem(event.time);
         aika->setTextAlignment(Qt::AlignCenter | Qt::AlignVCenter);
